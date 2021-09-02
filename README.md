@@ -1,14 +1,69 @@
-# Project
+# gradle-java-flavours [![Build Status](https://travis-ci.org/uklance/gradle-java-flavours.svg?branch=master)](https://travis-ci.org/uklance/gradle-java-flavours) [![Coverage Status](https://coveralls.io/repos/github/wainaina/gradle-java-flavours/badge.svg?branch=master)](https://coveralls.io/github/wainaina/gradle-java-flavours?branch=master)
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
 
-As the maintainer of this project, please make a few updates:
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+A Gradle plugin to add Android style flavours to a Java project
+
+Improved version of [Java Gradle Flavours provided by UkLance](https://github.com/uklance/gradle-java-flavours)
+
+## Usage:
+
+```groovy
+plugins {
+  id "com.microsoft.javaflavours" version "1.0"
+}
+javaFlavours {
+    flavour 'free'
+    flavour 'paid'
+    
+    testJavaPathResolver = { String flavour -> "src/${flavour}-test/java" }
+    testResourcesPathResolver = { String flavour -> "src/${flavour}-test/resources" }
+}
+dependencies {
+    implementation         'aaa:aaa:1.0'
+    freeImplementation     'bbb:bbb:2.0'
+    freeTestImplementation 'ccc:ccc:3.0'
+    paidRuntime            'ddd:ddd:4.0'
+}
+```
+
+You find detailed installation instructions at https://plugins.gradle.org/plugin/com.microsoft.javaflavours.
+
+## Directories:
+
+- `src/main/java` - Common java sources
+- `src/main/resources` - Common resources
+- `src/test/java` - Common tests
+- `src/test/resources` - Common test resources
+- `src/<flavour>/java` - Flavour specific java sources (can be configured)
+- `src/<flavour>/resources` - Flavour specific resources (can be configured)
+- `src/<flavour>Test/java` - Flavour specific tests (can be configured)
+- `src/<flavour>Test/resources` - Flavour specific test resources (can be configured)
+
+## Tasks
+- `implmentation<flavour>Java`
+- `testImplmentation<flavour>Java`
+- `compile<flavour>Java`
+- `compile<flavour>TestJava`
+- `<flavour>Classes`
+- `<flavour>Jar`
+- `<flavour>Test`
+- `<flavour>TestClasses`
+- `process<flavour>Resources`
+- `process<flavour>TestResources`
+
+## Configurations:
+
+- `<flavour>Implementation`
+- `<flavour>TestImplementation`
+- `<flavour>Compile`
+- `<flavour>CompileOnly`
+- `<flavour>CompileClasspath`
+- `<flavour>Runtime`
+- `<flavour>TestCompile`
+- `<flavour>TestCompileOnly`
+- `<flavour>TestCompileClasspath`
+- `<flavour>TestRuntime`
 
 ## Contributing
 
