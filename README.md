@@ -1,5 +1,4 @@
-# gradle-java-flavours [![Build Status](https://travis-ci.org/uklance/gradle-java-flavours.svg?branch=master)](https://travis-ci.org/uklance/gradle-java-flavours) [![Coverage Status](https://coveralls.io/repos/github/wainaina/gradle-java-flavours/badge.svg?branch=master)](https://coveralls.io/github/wainaina/gradle-java-flavours?branch=master)
-
+# gradle-java-flavours [![Build Status]()]() [![Coverage Status]()]()
 
 
 A Gradle plugin to add Android style flavours to a Java project
@@ -10,7 +9,7 @@ Improved version of [Java Gradle Flavours provided by UkLance](https://github.co
 
 ```groovy
 plugins {
-  id "com.microsoft.javaflavours" version "1.0"
+  id "com.microsoft.javaflavours" version "1.0.0"
 }
 javaFlavours {
     flavour 'free'
