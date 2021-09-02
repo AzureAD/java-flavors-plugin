@@ -58,10 +58,18 @@ task createTestkitFiles {
 	}
 }
 
+pluginBundle {
+	website = 'https://github.com/AzureAD/gradle-java-flavours/'
+	vcsUrl = 'https://github.com/AzureAD/gradle-java-flavours.git'
+	tags = ['javaflavour', 'buildVariants']
+}
+
 gradlePlugin {
 	plugins {
 		javaFlavours {
 			id = 'com.microsoft.javaflavours'
+			displayName = 'Add Android Style flavours to your java projects'
+			description = 'A plugin that adds Android style flavours to your java projects'
 			implementationClass = 'com.microsoft.javaflavours.JavaFlavoursPlugin'
 		}
 	}
